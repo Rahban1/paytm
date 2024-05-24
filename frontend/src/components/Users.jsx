@@ -4,15 +4,18 @@ import { Button } from "./Button"
 import axios from 'axios';
 
 export const Users = ()=>{
+    const userId = localStorage.getItem("userId");
     const [users,setUsers] = useState([])
     const [filter,setFilter] = useState('')
 
     useEffect(()=>{
         axios.get("http://localhost:3000/api/v1/user/bulk?filter="+ filter)
         .then(response => {
-            setUsers(response.data.user)
+            const newUsers = response.data.user.filter((x)=>x._id!==userId);
+            setUsers(newUsers)
         })
     },[filter])
+
 
     return (
         <div>

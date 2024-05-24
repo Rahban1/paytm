@@ -42,6 +42,7 @@ export function Signup() {
                 password
               });
               localStorage.setItem("token",response.data.token)
+              localStorage.setItem("userId",response.data.userId)
               navigate("/dashboard")
             }} label={"Sign up"}/>
             <BottonWarning label={"Already have an account?"} buttontext={"Sign in"} to={"/signin"}/>
