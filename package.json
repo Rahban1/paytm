@@ -4,5 +4,9 @@
     "cors": "^2.8.5",
     "jsonwebtoken": "^9.0.2",
     "zod": "^3.23.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install --prefix backend && npm install --prefix backend && npm start --prefix backend && npm run build --prefix frontend "
   }
 }
